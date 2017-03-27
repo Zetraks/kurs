@@ -122,34 +122,34 @@ public class NumberAdditionUI extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
          float num1, num2, result,s,d;
          int i;
-         float [][] matrix;//коэфиценты проводимости металлов
+         
+         float [][] matrix;
          matrix = new float[2][6];
          matrix[0][0]= (float) 0.034  ;matrix[1][0]=80  ;
          matrix[0][1]=(float) 0.25  ;matrix[1][1]=59  ;
          matrix[0][2]=(float) 0.06  ;matrix[1][2]=(float)40.8  ;
          matrix[0][3]=(float) 0.127  ;matrix[1][3]=(float) 24.6  ;
          matrix[0][4]=(float) 0.2  ;matrix[1][4]=(float)12.8  ;
-         matrix[0][5]=(float) 0.18  ;matrix[1][5]=1  ;
-    num1 = Float.parseFloat(jTextField1.getText());//ваты
-    num2 = Float.parseFloat(jTextField2.getText());//вольты
-    result = num1/num2;//амперы
+         matrix[0][5]=(float)0.18  ;matrix[1][5]=1  ;
+    num1 = Float.parseFloat(jTextField1.getText());
+    num2 = Float.parseFloat(jTextField2.getText());
+    result = num1/num2;
     i=  jComboBox1.getSelectedIndex();
    if (result>=10) d= (float) Math.pow(result/matrix[1][i],(2/3));
-   else d= (float) (result*matrix[0][i]+0.005);//диаметр предохранителя
+   else d= (float) (result*matrix[0][i]+0.005);
    String a =(String) jComboBox1.getSelectedItem();
-   s =   (float) (3.14 *(d*d/4));//площадь сечение предохранителя
+   s =   (float) (3.14 *(d*d/4));
    jTextArea1.setText(null);
    jTextArea1.append(("нужен предохранитель на "+String.format("%.4f", result)+"А"+ "\n"));
    jTextArea1.append(("материал плавкой вставки "+ a + "\n"));
-   jTextArea1.append(("диаметр " +String.format("%.4f",d)+" мм"+ "\n"));
+   jTextArea1.append(("диаметр" +String.format("%.4f",d)+" мм"+ "\n"));
    jTextArea1.append(("сечение "+String.format("%.6f",s)+" мм^2"));
+// jTextArea1.append(String.valueOf("сечение "+"%.2f"+s+" мм^2"));
 
 
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
- 
-    
     private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField2ActionPerformed
